@@ -33,7 +33,14 @@ extension Backend {
             
             switch await sendTokenToServer(idToken) {
             case .success(let response):
-                await callback(.success(response))
+                if response.status == "success" {
+                    await callback(.success(response))
+                } else {
+                    await callback(.failure(config.getError(.SignInWithGoogleFailed) ?? BackendError(
+                        type: .Custom,
+                        localizedDescription: response.message ?? "Error"
+                    )))
+                }
             case .failure(let error):
                 await callback(.failure(config.getError(.SignInWithGoogleFailed) ?? BackendError(
                     type: .Custom,
