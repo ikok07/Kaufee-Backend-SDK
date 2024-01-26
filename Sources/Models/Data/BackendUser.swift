@@ -14,15 +14,17 @@ public class BackendUser: Codable {
     public var name: String
     public var email: String
     public var photo: String
+    public var role: String
     public var oauthProvider: String?
     
-    public init(_id: String, oauthProviderUserId: String? = nil, token: String? = nil, name: String, email: String, photo: String, oauthProvider: String) {
+    public init(_id: String, oauthProviderUserId: String? = nil, token: String? = nil, name: String, email: String, photo: String, role: String, oauthProvider: String) {
         self._id = _id
         self.oauthProviderUserId = oauthProviderUserId
         self.token = token
         self.name = name
         self.email = email
         self.photo = photo
+        self.role = role
         self.oauthProvider = oauthProvider
     }
 }
