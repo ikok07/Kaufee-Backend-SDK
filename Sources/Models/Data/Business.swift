@@ -12,10 +12,10 @@ public struct Business: Codable, Hashable {
     public let image: String
     public let name: String
     public let description: String
-    public let products: BusinessProducts
+    public let products: [BusinessProduct]
     public let metadata: BusinessMetadata
     
-    public init(userId: String, image: String, name: String, description: String, products: BusinessProducts, metadata: BusinessMetadata) {
+    public init(userId: String, image: String, name: String, description: String, products: [BusinessProduct], metadata: BusinessMetadata) {
         self.userId = userId
         self.image = image
         self.name = name
@@ -25,7 +25,7 @@ public struct Business: Codable, Hashable {
     }
 }
 
-public struct BusinessProducts: Codable, Hashable {
+public struct BusinessProduct: Codable, Hashable {
     public let businessId: String
     public let name: String
     public let description: String
