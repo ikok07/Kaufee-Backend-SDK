@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Business: Codable {
+public struct Business: Codable, Hashable {
     public let userId: String
     public let name: String
     public let description: String
@@ -15,7 +15,7 @@ public struct Business: Codable {
     public let metadata: BusinessMetadata
 }
 
-public struct BusinessProducts: Codable {
+public struct BusinessProducts: Codable, Hashable {
     public let businessId: String
     public let name: String
     public let description: String
@@ -24,6 +24,6 @@ public struct BusinessProducts: Codable {
     public let metadata: BusinessMetadata
 }
 
-public struct BusinessMetadata: Codable {
+public struct BusinessMetadata: Codable, Hashable {
     public let creation: Date
 }
