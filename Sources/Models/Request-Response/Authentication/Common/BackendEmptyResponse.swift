@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct BackendEmptyResponse: Codable {
+public struct BackendEmptyResponse: Codable {
     let status: String
 }
