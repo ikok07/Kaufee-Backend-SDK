@@ -9,13 +9,15 @@ import Foundation
 
 public struct Business: Codable, Hashable {
     public let userId: String
+    public let image: String
     public let name: String
     public let description: String
     public let products: BusinessProducts
     public let metadata: BusinessMetadata
     
-    public init(userId: String, name: String, description: String, products: BusinessProducts, metadata: BusinessMetadata) {
+    public init(userId: String, image: String, name: String, description: String, products: BusinessProducts, metadata: BusinessMetadata) {
         self.userId = userId
+        self.image = image
         self.name = name
         self.description = description
         self.products = products
@@ -30,8 +32,21 @@ public struct BusinessProducts: Codable, Hashable {
     public let price: Double
     public let currency: String
     public let metadata: BusinessMetadata
+    
+    public init(businessId: String, name: String, description: String, price: Double, currency: String, metadata: BusinessMetadata) {
+        self.businessId = businessId
+        self.name = name
+        self.description = description
+        self.price = price
+        self.currency = currency
+        self.metadata = metadata
+    }
 }
 
 public struct BusinessMetadata: Codable, Hashable {
     public let creation: Date
+    
+    public init(creation: Date) {
+        self.creation = creation
+    }
 }
