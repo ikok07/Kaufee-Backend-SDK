@@ -31,4 +31,5 @@ public enum BackendErrorType: String, Error {
     case SignInWithGoogleFailed
     case AccountDeletionFailed
     case LogoutFailed
+    case CouldNotCreateBusiness
 }
