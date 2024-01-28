@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateBusinessResponse: Codable {
-    let status: String
-    let data: Business
+public struct CreateBusinessResponse: Codable {
+    public let status: String
+    public let data: Business
 }

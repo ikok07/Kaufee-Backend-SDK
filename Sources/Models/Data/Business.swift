@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct Business: Codable {
-    let userId: String
-    let name: String
-    let description: String
-    let products: BusinessProducts
-    let metadata: BusinessMetadata
+public struct Business: Codable {
+    public let userId: String
+    public let name: String
+    public let description: String
+    public let products: BusinessProducts
+    public let metadata: BusinessMetadata
 }
 
-struct BusinessProducts: Codable {
-    let businessId: String
-    let name: String
-    let description: String
-    let price: Double
-    let currency: String
-    let metadata: BusinessMetadata
+public struct BusinessProducts: Codable {
+    public let businessId: String
+    public let name: String
+    public let description: String
+    public let price: Double
+    public let currency: String
+    public let metadata: BusinessMetadata
 }
 
-struct BusinessMetadata: Codable {
-    let creation: Date
+public struct BusinessMetadata: Codable {
+    public let creation: Date
 }

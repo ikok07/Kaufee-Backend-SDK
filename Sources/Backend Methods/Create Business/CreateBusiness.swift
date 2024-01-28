@@ -11,7 +11,7 @@ import JSONCoder
 
 extension Backend {
     
-    func createBusiness(image: Image?, name: String, description: String, token: String, callback: (Result<CreateBusinessResponse, BackendError<String>>) async -> Void) async {
+    public func createBusiness(image: Image?, name: String, description: String, token: String, callback: (Result<CreateBusinessResponse, BackendError<String>>) async -> Void) async {
         guard let config else {
             await callback(.failure(K.SDKError.noConfigError))
             return
