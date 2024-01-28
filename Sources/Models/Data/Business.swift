@@ -8,6 +8,7 @@
 import Foundation
 
 public struct Business: Codable, Hashable {
+    public let _id: String
     public let userId: String
     public let image: String
     public let name: String
@@ -15,7 +16,8 @@ public struct Business: Codable, Hashable {
     public let products: [BusinessProduct]
     public let metadata: BusinessMetadata
     
-    public init(userId: String, image: String, name: String, description: String, products: [BusinessProduct], metadata: BusinessMetadata) {
+    public init(_id: String, userId: String, image: String, name: String, description: String, products: [BusinessProduct], metadata: BusinessMetadata) {
+        self._id = _id
         self.userId = userId
         self.image = image
         self.name = name
