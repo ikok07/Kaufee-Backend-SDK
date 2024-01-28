@@ -13,6 +13,14 @@ public struct Business: Codable, Hashable {
     public let description: String
     public let products: BusinessProducts
     public let metadata: BusinessMetadata
+    
+    public init(userId: String, name: String, description: String, products: BusinessProducts, metadata: BusinessMetadata) {
+        self.userId = userId
+        self.name = name
+        self.description = description
+        self.products = products
+        self.metadata = metadata
+    }
 }
 
 public struct BusinessProducts: Codable, Hashable {
