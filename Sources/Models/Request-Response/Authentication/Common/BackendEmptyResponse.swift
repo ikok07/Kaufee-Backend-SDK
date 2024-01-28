@@ -9,4 +9,6 @@ import Foundation
 
 public struct BackendEmptyResponse: Codable {
     let status: String
+    let message: String?
+    let identifier: String?
 }

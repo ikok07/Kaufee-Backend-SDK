@@ -28,7 +28,14 @@ extension Backend {
             if response.status == "success" {
                 await callback(.success(response))
             } else {
-                await callback(.failure(config.getError(.CouldNotDeleteBusiness) ?? K.SDKError.noAPIConnectionError))
+                await callback(.failure(
+                    config.getError(.CouldNotDeleteBusiness) ??
+                    BackendError(
+                        type: .Custom,
+                        localizedDescription: response.message ??
+                        K.SDKError.noAPIConnectionError.localizedDescription
+                    )
+                ))
             }
         case .failure(let error):
             await callback(.failure(config.getError(.CouldNotDeleteBusiness) ?? BackendError(type: .Custom, localizedDescription: error.localizedDescription)))

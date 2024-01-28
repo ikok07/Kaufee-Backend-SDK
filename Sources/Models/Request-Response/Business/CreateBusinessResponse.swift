@@ -10,4 +10,6 @@ import Foundation
 public struct CreateBusinessResponse: Codable {
     public let status: String
     public let data: Business
+    public let message: String?
+    public let identifier: String?
 }
