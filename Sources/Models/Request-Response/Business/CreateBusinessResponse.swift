@@ -9,7 +9,11 @@ import Foundation
 
 public struct CreateBusinessResponse: Codable {
     public let status: String
-    public let data: Business?
+    public let data: CreateBusinessData?
     public let message: String?
     public let identifier: String?
+}
+
+public struct CreateBusinessData: Codable {
+    public let business: Business
 }
