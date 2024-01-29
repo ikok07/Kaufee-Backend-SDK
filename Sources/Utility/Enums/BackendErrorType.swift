@@ -33,4 +33,5 @@ public enum BackendErrorType: String, Error {
     case LogoutFailed
     case CouldNotCreateBusiness
     case CouldNotDeleteBusiness
+    case CouldNotLoadBusinesses
 }
