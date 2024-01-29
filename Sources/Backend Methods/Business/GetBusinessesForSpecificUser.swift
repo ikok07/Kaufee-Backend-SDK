@@ -10,13 +10,13 @@ import NetworkRequests
 
 extension Backend {
     
-    public func getAllBusinesses(token: String, callback: (Result<GetAllBusinessesResponse, BackendError<String>>) async -> Void) async {
+    public func getAllBusinessesForSpecificUser(userId: String, token: String, callback: (Result<GetAllBusinessesResponse, BackendError<String>>) async -> Void) async {
         guard let config else {
             await callback(.failure(K.SDKError.noConfigError))
             return
         }
         
-        let request: Result<GetAllBusinessesResponse, NetworkError> = await Request.get(url: "\(config.baseUrl)/en/api/v1/business", authToken: token)
+        let request: Result<GetAllBusinessesResponse, NetworkError> = await Request.get(url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business", authToken: token)
         
         switch request {
         case .success(let response):
