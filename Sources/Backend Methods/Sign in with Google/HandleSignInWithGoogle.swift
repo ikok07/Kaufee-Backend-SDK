@@ -31,6 +31,8 @@ extension Backend {
                 return
             }
             
+            print(idToken)
+            
             switch await sendTokenToServer(idToken) {
             case .success(let response):
                 if response.status == "success" {
