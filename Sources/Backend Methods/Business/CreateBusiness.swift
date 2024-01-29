@@ -28,6 +28,10 @@ extension Backend {
             authToken: token
         )
         
+        if let jsonData {
+            print("Form data JSON: \(String(describing: String(data: jsonData, encoding: .utf8)))")
+        }
+        
         guard let request else {
             await callback(.failure(K.SDKError.noAPIConnectionError))
             return
