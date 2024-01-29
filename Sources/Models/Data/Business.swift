@@ -46,9 +46,9 @@ public struct BusinessProduct: Codable, Hashable {
 }
 
 public struct BusinessMetadata: Codable, Hashable {
-    public let creation: Date
+    public let creation: String
     
-    public init(creation: Date) {
+    public init(creation: String) {
         self.creation = creation
     }
 }
