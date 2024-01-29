@@ -8,13 +8,13 @@
 import Foundation
 
 public struct GetAllBusinessesResponse: Codable {
-    let status: String
-    let results: Int?
-    let data: GetAllBusinessesData?
-    let message: String?
-    let identifier: String?
+    public let status: String
+    public let results: Int?
+    public let data: GetAllBusinessesData?
+    public let message: String?
+    public let identifier: String?
 }
 
 public struct GetAllBusinessesData: Codable {
-    let businesses: [Business]
+    public let businesses: [Business]
 }
