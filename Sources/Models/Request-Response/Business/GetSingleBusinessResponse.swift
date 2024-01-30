@@ -15,5 +15,5 @@ public struct GetSingleBusinessResponse: Codable {
 }
 
 public struct GetSingleBusinessData: Codable {
-    let business: Business
+    public let business: Business
 }
