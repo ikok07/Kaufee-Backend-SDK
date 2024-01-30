@@ -11,16 +11,16 @@ import JSONCoder
 
 extension Backend {
     
-    public func createBusiness(image: Image?, name: String, description: String, token: String, callback: (Result<CreateBusinessResponse, BackendError<String>>) async -> Void) async {
+    public func createBusiness(image: Image?, name: String, description: String, token: String, callback: (Result<ModifyBusinessResponse, BackendError<String>>) async -> Void) async {
         guard let config else {
             await callback(.failure(K.SDKError.noConfigError))
             return
         }
         
-        let jsonData = JSONCoder.encode(CreateBusinessRequest(name: name, description: description))
+        let jsonData = JSONCoder.encode(ModifyBusinessRequest(name: name, description: description))
         let uiImage = ImageRenderer(content: image).uiImage
         
-        let request: Result<CreateBusinessResponse, NetworkError>? = await Request.formData(
+        let request: Result<ModifyBusinessResponse, NetworkError>? = await Request.formData(
             httpMethod: "POST",
             url: "\(config.baseUrl)/en/api/v1/business",
             json: jsonData,

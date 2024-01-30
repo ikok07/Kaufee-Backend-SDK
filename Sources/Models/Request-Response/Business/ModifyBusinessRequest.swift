@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateBusinessRequest: Codable {
+struct ModifyBusinessRequest: Codable {
     let name: String
     let description: String
 }

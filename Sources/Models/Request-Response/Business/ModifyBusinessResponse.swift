@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct CreateBusinessResponse: Codable {
+public struct ModifyBusinessResponse: Codable {
     public let status: String
-    public let data: CreateBusinessData?
+    public let data: ModifyBusinessData?
     public let message: String?
     public let identifier: String?
 }
 
-public struct CreateBusinessData: Codable {
+public struct ModifyBusinessData: Codable {
     public let business: Business
 }
