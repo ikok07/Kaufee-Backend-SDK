@@ -16,7 +16,7 @@ extension Backend {
             return
         }
         
-        let request: Result<ModifyBusinessResponse, NetworkError> = await Request.formData(httpMethod: "PATCH", url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)")
+        let request: Result<ModifyBusinessResponse, NetworkError> = await Request.formData(httpMethod: "PATCH", url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)", authToken: token)
         
         switch request {
         case .success(let response):
