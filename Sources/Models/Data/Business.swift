@@ -46,9 +46,13 @@ public struct BusinessProduct: Codable, Hashable {
 }
 
 public struct BusinessMetadata: Codable, Hashable {
-    public let creation: String
+    public let creation: Double
     
-    public init(creation: String) {
+    public var realCreationDate: Date {
+        return Date(timeIntervalSince1970: creation / 1000)
+    }
+    
+    public init(creation: Double) {
         self.creation = creation
     }
 }
