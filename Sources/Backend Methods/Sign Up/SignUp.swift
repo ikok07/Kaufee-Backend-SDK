@@ -10,7 +10,7 @@ import NetworkRequests
 
 extension Backend {
     public func signUp(userType: String, name: String, email: String, password: String, confirmPassword: String, deviceToken: String? = "", callback: (Result<SignUpResponse, BackendError<String>>) async -> Void) async {
-        guard let config = self.config else {
+        guard let config else {
             await callback(.failure(K.SDKError.noConfigError))
             return
         }
