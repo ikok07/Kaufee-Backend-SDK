@@ -29,14 +29,16 @@ public struct Business: Codable, Hashable {
 
 public struct BusinessProduct: Codable, Hashable {
     public let businessId: String
+    public let photo: String
     public let name: String
     public let description: String
     public let price: Double
     public let currency: String
     public let metadata: BusinessMetadata
     
-    public init(businessId: String, name: String, description: String, price: Double, currency: String, metadata: BusinessMetadata) {
+    public init(businessId: String, photo: String, name: String, description: String, price: Double, currency: String, metadata: BusinessMetadata) {
         self.businessId = businessId
+        self.photo = photo
         self.name = name
         self.description = description
         self.price = price
