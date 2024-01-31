@@ -39,13 +39,13 @@ extension Backend {
                 await callback(.success(response))
             } else {
                 await callback(.failure(
-                    config.getError(.CouldNotLoadSingleProduct) ??
+                    config.getError(.CouldNotUpdateSignleProduct) ??
                     BackendError(type: .Custom, localizedDescription: response.message ?? K.SDKError.noAPIConnectionError.localizedDescription)
                 ))
             }
         case .failure(let error):
             await callback(.failure(
-                config.getError(.CouldNotLoadSingleProduct) ??
+                config.getError(.CouldNotUpdateSignleProduct) ??
                 BackendError(type: .Custom, localizedDescription: error.localizedDescription)
             ))
         }
