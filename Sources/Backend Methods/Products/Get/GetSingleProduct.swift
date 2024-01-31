@@ -16,7 +16,7 @@ extension Backend {
             return
         }
         
-        let request: Result<GetSingleProductResponse, NetworkError> = await Request.get(url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)/products/\(productId)")
+        let request: Result<GetSingleProductResponse, NetworkError> = await Request.get(url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)/products/\(productId)", authToken: token)
         
         switch request {
         case .success(let response):
