@@ -10,7 +10,7 @@ import NetworkRequests
 
 extension Backend {
     
-    func getSingleProduct(userId: String, businessId: String, productId: String, token: String, callback: ((Result<GetSingleProductResponse, BackendError<String>>) async -> Void)) async {
+    public func getSingleProduct(userId: String, businessId: String, productId: String, token: String, callback: ((Result<GetSingleProductResponse, BackendError<String>>) async -> Void)) async {
         guard let config else {
             await callback(.failure(K.SDKError.noConfigError))
             return
