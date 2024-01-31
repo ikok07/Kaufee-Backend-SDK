@@ -28,6 +28,7 @@ public struct Business: Codable, Hashable {
 }
 
 public struct BusinessProduct: Codable, Hashable {
+    public let _id: String
     public let businessId: String
     public let photo: String
     public let name: String
