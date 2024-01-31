@@ -45,7 +45,7 @@ extension Backend {
             }
         case .failure(let error):
             await callback(.failure(
-                config.getError(.CouldNotUpdateSignleProduct) ??
+                config.getError(.CouldNotUpdateSingleProduct) ??
                 BackendError(type: .Custom, localizedDescription: error.localizedDescription)
             ))
         }
