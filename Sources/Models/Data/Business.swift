@@ -37,7 +37,8 @@ public struct BusinessProduct: Codable, Hashable {
     public let currency: String
     public let metadata: BusinessMetadata
     
-    public init(businessId: String, photo: String, name: String, description: String, price: Double, currency: String, metadata: BusinessMetadata) {
+    public init(_id: String, businessId: String, photo: String, name: String, description: String, price: Double, currency: String, metadata: BusinessMetadata) {
+        self._id = _id
         self.businessId = businessId
         self.photo = photo
         self.name = name
