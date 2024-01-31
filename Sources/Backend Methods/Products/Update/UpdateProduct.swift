@@ -39,7 +39,7 @@ extension Backend {
                 await callback(.success(response))
             } else {
                 await callback(.failure(
-                    config.getError(.CouldNotUpdateSignleProduct) ??
+                    config.getError(.CouldNotUpdateSingleProduct) ??
                     BackendError(type: .Custom, localizedDescription: response.message ?? K.SDKError.noAPIConnectionError.localizedDescription)
                 ))
             }

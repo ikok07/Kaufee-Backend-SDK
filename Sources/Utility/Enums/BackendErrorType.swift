@@ -37,5 +37,6 @@ public enum BackendErrorType: String, Error {
     case CouldNotLoadSingleBusiness
     case CouldNotUpdateBusiness
     case CouldNotLoadSingleProduct
-    case CouldNotUpdateSignleProduct
+    case CouldNotUpdateSingleProduct
+    case CouldNotDeleteSingleProduct
 }
