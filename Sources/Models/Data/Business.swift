@@ -13,7 +13,7 @@ public struct Business: Codable, Hashable {
     public let photo: String
     public let name: String
     public let description: String
-    public let products: [BusinessProduct]
+    public var products: [BusinessProduct]
     public let metadata: BusinessMetadata
     
     public init(_id: String, userId: String, photo: String, name: String, description: String, products: [BusinessProduct], metadata: BusinessMetadata) {
