@@ -28,7 +28,7 @@ extension Backend {
             return
         }
         
-        let jsonData = JSONCoder.encode(UpdateProductRequest(name: name, description: description, price: price, currency: currency))
+        let jsonData = JSONCoder.encode(ModifyProductRequest(name: name, description: description, price: price, currency: currency))
         let uiImage = ImageRenderer(content: image).uiImage
         
         let request: Result<GetSingleProductResponse, NetworkError> = await Request.formData(httpMethod: "PATCH", url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)/products/\(productId)", json: jsonData, image: uiImage, authToken: token)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import NetworkRequests
+import JSONCoder
 
 extension Backend {
     
@@ -26,7 +27,10 @@ extension Backend {
             return
         }
         
-        let request: Result<GetSingleProductResponse, NetworkError> = await Request.formData(httpMethod: "POST", url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)/products")
+        let uiImage = ImageRenderer(content: image).uiImage
+        let json = JSONCoder.encode(ModifyProductRequest(name: name, description: description, price: Double(price) ?? 0, currency: currency))
+        
+        let request: Result<GetSingleProductResponse, NetworkError> = await Request.formData(httpMethod: "POST", url: "\(config.baseUrl)/en/api/v1/user/\(userId)/business/\(businessId)/products", json: json, image: uiImage, authToken: token)
         
         switch request {
         case .success(let response):

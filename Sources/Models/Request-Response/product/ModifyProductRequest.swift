@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UpdateProductRequest: Codable {
+public struct ModifyProductRequest: Codable {
     let name: String
     let description: String
     let price: Double
