@@ -31,11 +31,14 @@ public enum BackendErrorType: String, Error {
     case SignInWithGoogleFailed
     case AccountDeletionFailed
     case LogoutFailed
+    
     case CouldNotCreateBusiness
     case CouldNotDeleteBusiness
     case CouldNotLoadBusinesses
     case CouldNotLoadSingleBusiness
     case CouldNotUpdateBusiness
+    
+    case CouldNotCreateSingleProduct
     case CouldNotLoadSingleProduct
     case CouldNotUpdateSingleProduct
     case CouldNotDeleteSingleProduct
